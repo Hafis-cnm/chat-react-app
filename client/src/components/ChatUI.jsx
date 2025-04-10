@@ -5,27 +5,14 @@ function ChatUI() {
 
   const [currentUser, setCurrentUser] = useState("Select a User");
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([
-    "Hello",
-    "hai",
-    "how are you",
-    "fine",
-    "Hello",
-    "hai",
-    "how are you",
-    "fine",
-    "Hello",
-    "hai",
-    "how are you",
-    "fine",
-  ]);
+  const [messages, setMessages] = useState([]);
 
   function handleSetUser(currentUserName) {
     setCurrentUser((c) => currentUserName);
   }
 
   function handleMessage() {
-    console.log(message);
+    setMessages((m) => [...m, message]);
     setMessage("");
   }
   return (
